@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form class="CreateRequest">
+        <textarea name="message" id="" cols="30" rows="10"></textarea>4
+        <button >Predict</button>
+    </form>
+    prediction <a id="Prediction"></a>
+
+
+    <!-- <script type="text/javascript">
+        const querystring = require('querystring');
+
+        function myFunction() {
+            const CreateRequest = document.querySelector('.CreateRequest')
+            CreateRequest.addEventListener('submit', (e) => {
+                e.preventDefault()
+                const Message = CreateRequest.querySelector('.message').value
+                JsonMessage = {
+                    "message": Message,
+
+                };
+                const payload =
+                    { 'message': 'i have a big dream' }
+
+                var xhr = new XMLHttpRequest();
+                var url = "/predict";
+                xhr.open("POST", url, true);
+                xhr.setRequestHeader("Content-Type", "application/json");
+
+                var data = JSON.stringify(JsonMessage);
+                xhr.send(data);//Sending Data
+
+                xhr.onreadystatechange = function () {//Receiving Data
+                    console.log(xhr.status);
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var json = JSON.parse(xhr.responseText);
+                        console.log(JSON.stringify(json));
+                        document.getElementById("Prediction").innerHTML = JSON.stringify(json);
+                    }
+                };
+            })
+
+        }
+    </script> -->
+</body>
+
+</html>
