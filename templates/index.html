@@ -5,52 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Spam Detection</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 
+
+
 <body>
-    <form class="CreateRequest">
-        <textarea name="message" id="" cols="30" rows="10"></textarea>4
-        <button >Predict</button>
-    </form>
-    prediction <a id="Prediction"></a>
+    <div class="container" id="">
+        <nav class="nav nav-tabs ">
+            <a class="nav-item nav-link active" href="#">Home</a>
+         
+        </nav>
+
+        <section>
+            <div class="row">
+                <div class="col-md-8">
+                    <div>
+                        <h4>E-posta mesajı girin</h4>
+
+                    </div>
+                    <form action="{{ url_for('predict')}}" method="post">
+                        <div>
+                            <textarea name="data" id="data" cols="60" rows="10"></textarea>
+
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn btn-primary  ">Analiz</button>
+
+                        </div>
+                    </form>
 
 
-    <!-- <script type="text/javascript">
-        const querystring = require('querystring');
 
-        function myFunction() {
-            const CreateRequest = document.querySelector('.CreateRequest')
-            CreateRequest.addEventListener('submit', (e) => {
-                e.preventDefault()
-                const Message = CreateRequest.querySelector('.message').value
-                JsonMessage = {
-                    "message": Message,
+                </div>
+                <div class="col-md-4">
+                    <h4>E-posta Analiz Sonucu</h4>
+                    <div>
+                    <h3>{{predict}}</h3>
+                    </div>
 
-                };
-                const payload =
-                    { 'message': 'i have a big dream' }
 
-                var xhr = new XMLHttpRequest();
-                var url = "/predict";
-                xhr.open("POST", url, true);
-                xhr.setRequestHeader("Content-Type", "application/json");
+                </div>
+            </div>
+        </section>
 
-                var data = JSON.stringify(JsonMessage);
-                xhr.send(data);//Sending Data
 
-                xhr.onreadystatechange = function () {//Receiving Data
-                    console.log(xhr.status);
-                    if (xhr.readyState === 4 && xhr.status === 200) {
-                        var json = JSON.parse(xhr.responseText);
-                        console.log(JSON.stringify(json));
-                        document.getElementById("Prediction").innerHTML = JSON.stringify(json);
-                    }
-                };
-            })
 
-        }
-    </script> -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>
