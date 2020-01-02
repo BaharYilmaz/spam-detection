@@ -1,4 +1,4 @@
-# spam_detection
+# Spam Detection
 Spam Detection - English
 
 ## Amaç
